@@ -1,3 +1,4 @@
+[![Sun Wallet](https://github.com/swcapital/sunwallet_ios/blob/master/banner.png)](https://sunwallet.com)
 # Sun Wallet
 Sun Wallet gives you full control of your cryptocurrencies and lets you buy, sell, exchange, lend and borrow freely.
 
