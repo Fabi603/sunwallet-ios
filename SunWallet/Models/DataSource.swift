@@ -1,7 +1,7 @@
 import UIKit
 
 class DataSource: ObservableObject {
-    let assets: [Asset] = [
+    let assets: [Asset2] = [
         .init(title: "Bitcoin", code: "BTC", imageName: "btc"),
         .init(title: "Cosmos", code: "ATOM", imageName: "atom"),
         .init(title: "Basic Attention Token", code: "BAT", imageName: "bat"),
@@ -18,15 +18,6 @@ class DataSource: ObservableObject {
         .init(title: "Matic Network", code: "MATIC", imageName: "matic"),
         .init(title: "Nexo", code: "NEXO", imageName: "nexo"),
         .init(title: "OmiseGO", code: "OMG", imageName: "omg"),
-    ]
-    
-    let currencies: [Currency] = [
-        Currency(title: "Australian dollar", subtitle: "AUD"),
-        Currency(title: "British Pound", subtitle: "GBP"),
-        Currency(title: "Canadian Dollar", subtitle: "CAD"),
-        Currency(title: "Chinese Renminbi Yuan", subtitle: "CNY"),
-        Currency(title: "Euro", subtitle: "EUR"),
-        Currency(title: "Japanese Yen", subtitle: "JPY")
     ]
     
     let articles: [Article] = [
@@ -56,15 +47,12 @@ class DataSource: ObservableObject {
         ),
     ]
     
-    lazy var topMovers: [Asset] = Array(assets.random(5))
+    lazy var topMovers: [Asset2] = Array(assets.random(5))
         
     lazy var user = User(
         favorites: Array(assets.random(6)),
         balance: Dictionary(uniqueKeysWithValues: assets.map { ($0, Double.random(in: 0 ..< 20)) })
     )
-    
-    private let launchAssetTitles = ["BTC", "BCH", "ETH", "BNT", "KCS"]
-    var launchAssets: [Asset] { assets.filter { launchAssetTitles.contains($0.code) } }
 }
 
 

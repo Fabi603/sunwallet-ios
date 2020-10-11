@@ -45,11 +45,11 @@ struct BottomSheetView<Content: View>: View {
         .offset(y: max(translation, 0))
         .gesture(dragGesture)
         
-        .background(Color.black.opacity(0.4))
-        .edgesIgnoringSafeArea(.all)
+        .background(Color.black.opacity(0.4).edgesIgnoringSafeArea(.top))
+        //.edgesIgnoringSafeArea(.top)  // It should be in here but there is some bug in SwiftUI 1
         .onTapGesture { self.isOpen = false }
         .animation(.linear(duration: 0))
-        .zIndex(100) // Neeeded for animation
+        .zIndex(1) // Neeeded for animation
     }
 }
 

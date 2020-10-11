@@ -33,7 +33,7 @@ struct SWScrollView<Content: View>: View {
     }
     private var navigationBar: some View {
         Rectangle()
-            .fill(Color.white)
+            .fill(Color(UIColor.systemBackground))
             .frame(height: 64)
             .frame(maxWidth: .infinity)
             .shadow(radius: navigationBarShadow)
@@ -44,7 +44,7 @@ struct SWScrollView<Content: View>: View {
             .vertical,
             showIndicators: false,
             contentOffset: $offset,
-            content: content.padding(.top, 110)
+            content: content.padding(.top, 130)
         )
     }
     
